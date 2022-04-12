@@ -61,7 +61,7 @@ jobs:
           to: $CIRCLE_WORKFLOW_ID_FAIL
       - run:
           name: Show error when/if fail
-          command: echo "Hello Error!"
+          command: echo <
           when: on_fail
 
   print_output_file:
