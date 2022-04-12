@@ -52,16 +52,16 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run: echo "Hello World, by Euclides Mabota" > ~/output.txt
+      - run: echo "Hello World, by Euclides Mabota" >>> ~/output.txt
       - persist_to_workspace:
           root: ~/
           paths:
             - output.txt
       - print_pipeline_id:
-          to: $CIRCLE_WORKFLOW_ID_FAIL
+          to: $CIRCLE_WORKFLOW_ID
       - run:
           name: Show error when/if fail
-          command: echo <
+          command: echo "Hello Error!"
           when: on_fail
 
   print_output_file:
