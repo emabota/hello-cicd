@@ -58,7 +58,11 @@ jobs:
           paths:
             - output.txt
       - print_pipeline_id:
-          to: $CIRCLE_WORKFLOW_ID
+          - to: $CIRCLE_WORKFLOW_ID
+      - run:
+          name: Show error when/if fail
+          command: echo "Hello Error!"
+          when: on_fail
 
   print_output_file:
     docker:
